@@ -1,5 +1,5 @@
-require_relative 'QuestionsDatabase'
-require_relative 'Users'
+require_relative 'questions_database'
+require_relative 'users'
 
 class Questions
     attr_accessor :id, :author_id, :title, :body

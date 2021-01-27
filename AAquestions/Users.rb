@@ -1,4 +1,4 @@
-require_relative 'QuestionsDatabase'
+require_relative 'questions_database'
 require_relative 'questions'
 require_relative 'replies'
 
