@@ -70,5 +70,8 @@ VALUES
     ((SELECT id FROM questions WHERE id = 2), (SELECT id FROM users WHERE id = 3), NULL, 'stfu karen'),
     ((SELECT id FROM questions WHERE id = 2), (SELECT id FROM users WHERE id = 4), 1, 'im calling the cops on you');
 
+INSERT INTO
+    question_follows(question_id, users_id)
+
 
 
