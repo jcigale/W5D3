@@ -55,10 +55,21 @@ INSERT INTO
     users(fname, lname)
 VALUES 
     ('Tom', 'Smith'),
-    ('John', 'Cigale');
+    ('John', 'Cigale'),
+    ('Marco', 'Torre'),
+    ('Karen', 'McKaren');
 
 INSERT INTO
     questions(title, body, author_id)
 VALUES  
-    ('Why is the sky blue?', 'Someone please tell me why the sky is blue?', (SELECT id FROM users WHERE fname = 'John' AND lname = 'Cigale'));
+    ('John''s question', 'Someone please tell me why the sky is blue?', (SELECT id FROM users WHERE fname = 'John' AND lname = 'Cigale')),
+    ('Karen''s question', 'What is bit coin?', (SELECT id FROM users WHERE fname = 'Karen' AND lname = 'McKaren'));
+
+INSERT INTO
+    replies(question_id, author_id, parent_id, body)
+VALUES
+    ((SELECT id FROM questions WHERE id = 2), (SELECT id FROM users WHERE id = 3), NULL, 'stfu karen'),
+    ((SELECT id FROM questions WHERE id = 2), (SELECT id FROM users WHERE id = 4), (SELECT id FROM replies WHERE id = 1), 'im calling the cops on you');
+
+
 

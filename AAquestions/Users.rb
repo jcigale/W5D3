@@ -1,4 +1,6 @@
 require_relative 'QuestionsDatabase'
+require_relative 'questions'
+require_relative 'replies'
 
 class Users
     attr_accessor :id, :fname, :lname
@@ -40,4 +42,12 @@ class Users
         Users.new(user.first)
     end
 
-end
+    def authored_questions 
+      Questions.find_by_author_id(self.id)
+    end
+
+    def authored_replies
+      Replies.find_by_author_id(self.id)
+    end
+
+  end
