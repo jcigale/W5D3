@@ -62,4 +62,9 @@ class Questions
     def author
         Users.find_by_id(self.author_id)
     end
+
+    def followed_questions
+      QuestionFollows.followers_for_question_id(self.id)
+    end
+
 end

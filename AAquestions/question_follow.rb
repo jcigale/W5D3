@@ -46,4 +46,6 @@ class QuestionFollow
         Questions.new(questions.first)
     end
 
+    
+
 end
