@@ -1,3 +1,5 @@
+PRAGMA foreign_keys = ON;
+
 DROP TABLE IF EXISTS users;
 
 CREATE TABLE users (
@@ -48,3 +50,4 @@ CREATE TABLE question_likes (
     FOREIGN KEY (question_id) REFERENCES questions(id)
     FOREIGN KEY (liker_id) REFERENCES users(id)
 );
+
