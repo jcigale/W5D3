@@ -51,3 +51,14 @@ CREATE TABLE question_likes (
     FOREIGN KEY (liker_id) REFERENCES users(id)
 );
 
+INSERT INTO 
+    users(fname, lname)
+VALUES 
+    ('Tom', 'Smith'),
+    ('John', 'Cigale');
+
+INSERT INTO
+    questions(title, body, author_id)
+VALUES  
+    ('Why is the sky blue?', 'Someone please tell me why the sky is blue?', (SELECT id FROM users WHERE fname = 'John' AND lname = 'Cigale'));
+
