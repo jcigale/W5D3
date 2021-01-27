@@ -23,7 +23,10 @@ CREATE TABLE questions (
 
 CREATE TABLE question_follows (
     questions_id INTEGER,
-    users_id INTEGER
+    users_id INTEGER,
+
+    FOREIGN KEY (questions_id) REFERENCES questions(id)
+    FOREIGN KEY (users_id) REFERENCES users(id)
 );
 
 CREATE TABLE replies (
